@@ -15,7 +15,7 @@ In order to perform a file transfer operation, a receiver process (`rcv`) should
 
 A sender process (`ncp`) should be run on the source machine using the following interface:
 
-`ncp <loss_rate_percent> <source_file_name> <dest_file_name>@<comp_name>` 
+``` `ncp <loss_rate_percent> <source_file_name> <dest_file_name>@<comp_name>` ```
 
 where `<comp_name>` is the name of the computer where the server runs (ugrad1, ugrad2, etc.)
 
