@@ -34,7 +34,9 @@ Both the sender (`ncp`) and the receiver (`rcv`) programs should two statistics 
 At the end of the transfer, both sender and receiver programs should report the size of the file transferred, the amount of time required for the transfer, and the average rate at which the communication occurred (in Mbits/sec).
 
 <a name="part2"></a>
-## Part 1: Using Using TCP/IP
+## Part 2: Using Using TCP/IP
+
+Using the reliable TCP/IP protocol, we implement the corresponding t_ncp and t_rcv. These report the amount of data transferred and the rate, the same way as ncp and rcv programs. The t_rcv is not required to handle multiple senders. It can handle a single sender and then exit.
 
 <a name="part3"></a>
 ## Artifical Loss
