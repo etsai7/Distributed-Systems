@@ -40,5 +40,5 @@ At the end of the transfer, both sender and receiver programs should report the 
 Using the reliable TCP/IP protocol, we implement the corresponding `t_ncp` and `t_rcv`. These report the amount of data transferred and the rate, the same way as `ncp` and `rcv` programs. The `t_rcv` is not required to handle multiple senders. It can handle a single sender and then exit.
 
 <a name="part3"></a>
-## Artifical Loss
+## Part 3: Artifical Loss
 The coat routine `sendto_dbg` has a similar interface to `sendto` (see `man 2 sendto`). The `sendto_dbg` routine will randomly decide to discard packets in order to create additional network message omissions based on the loss rate. An initialization routine, `sendto_dbg_init`, should be called once, in the beginning of each scenario, to set the loss rate for that scenario. 
