@@ -35,3 +35,6 @@ The output file name will be `<machine_index>.out`
 In order to be able to check the software, the mcast program should call a coat routine named `recv_dbg` instead of the `recv` or `recvfrom` system calls. The coat routine has the same interface as `recv` (see `man 2 recv`). The recv_dbg routine randomly decides to discard packets in order to create network message omissions.  
 
 EVERY RECV CALL in the mcast program MUST use the `recv_dbg` call EXCEPT the first one which receives the special start_mcast packet.  At the beginning of the mcast program it should wait for the `start_mcast` packet to arrive. This will be done by calling `recv` directly (without the coat routine). Only after that packet arrives, the reliable protocol should be invoked. The `start_mcast` process purpose is to help us avoid membership issues.
+
+
+### [Project 2 Source](http://www.cnds.jhu.edu/courses/cs437/exercises/Ex2_2016.txt)
