@@ -9,8 +9,8 @@ Constructing a reliable point-to-point basic file transfer tool using UDP/IP.
 <a name="part1"></a>
 ## Part 1: Using Using UDP/IP
 Using the unreliable UDP/IP protocol, we wrote a tool that reliably copies a file to another machine. The tool consists of two programs: 
-	* `ncp` - the sender process.
-	* `rcv` - the receiver process.
+* `ncp` - the sender process.
+* `rcv` - the receiver process.
 In order to perform a file transfer operation, a receiver process (`rcv`) should be run on the target machine.  
 
 A sender process (`ncp`) should be run on the source machine using the following interface:
