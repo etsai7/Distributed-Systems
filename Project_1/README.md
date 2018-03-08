@@ -15,7 +15,7 @@ In order to perform a file transfer operation, a receiver process (`rcv`) should
 
 A sender process (`ncp`) should be run on the source machine using the following interface:
 
-``` `ncp <loss_rate_percent> <source_file_name> <dest_file_name>@<comp_name>` ```
+`ncp <loss_rate_percent> <source_file_name> <dest_file_name>@<comp_name>`
 
 where `<comp_name>` is the name of the computer where the server runs (ugrad1, ugrad2, etc.)
 
@@ -23,9 +23,7 @@ A receiver process (`rcv`) handles an UNLIMITED number of file-transfer operatio
 
 `rcv <loss_rate_percent>`
 
-where loss rate is the percentage loss of sent packets. e.g., rcv 10 will drop 10 percent before sending.
-
-A sender process (`npc`) handles one operation and then terminates. We assume that the source file name represents a specific single file.
+where loss rate is the percentage loss of sent packets. e.g., rcv 10 will drop 10 percent before sending. A sender process (`npc`) handles one operation and then terminates. We assume that the source file name represents a specific single file.
 
 To check the software, each process (both `rcv` and `npc`) should be calling a coat routine named [`sendto_dbg`](#part3) instead of the `sendto` system call. The coat routine will allow control of an emulated network loss percentage for each sent packet.
 
@@ -42,4 +40,4 @@ At the end of the transfer, both sender and receiver programs should report the 
 
 <a name="part3"></a>
 ## Artifical Loss
-The coat routine `sendto_dbg` has a similar interface to sendto` (see man 2 sendto). The `sendto_dbg` routine will randomly decide to discard packets in order to create additional network message omissions based on the loss rate. An initialization routine, `sendto_dbg_init`, should be called once, in the beginning of each scenario, to set the loss rate for that scenario. 
+The coat routine `sendto_dbg` has a similar interface to `sendto` (see man 2 sendto). The `sendto_dbg` routine will randomly decide to discard packets in order to create additional network message omissions based on the loss rate. An initialization routine, `sendto_dbg_init`, should be called once, in the beginning of each scenario, to set the loss rate for that scenario. 
